@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .service-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            /* Four columns in a row */
+            gap: 20px;
+            /* Gap between cards */
+            justify-content: center;
+        }
+
+        .service-card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            width: 200px;
+            cursor: pointer;
+        }
+
+        .order-details {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .order-form {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+        button{
+            background-color: lightblue;
+            border-radius: 10px;
+        }
+        label{
+            color: black;
+        }
+        input{
+            background-color: white;
+        }
+      
+    </style>
+</head>
+
+<body>
+
+    <h1>Web Services</h1>
+
+    <!-- Service Container for Rows -->
+    <div class="service-container">
+
+        <!-- Service Card 1 -->
+        <div class="service-card"
+            onclick="showOrderForm('https://geekflare.com/wp-content/uploads/2020/07/designmodo-slides-1200x506.png', 'Static Website', 'Perfect for portfolios, landing pages, or simple informational sites..', '$500')">
+            <img src="https://geekflare.com/wp-content/uploads/2020/07/designmodo-slides-1200x506.png"
+                alt="Service Image" width="150">
+            <h2>Static Website</h2>
+            <p>Perfect for portfolios, landing pages, or simple informational sites..</p>
+            <p>Price: $500</p>
+            <button >Order Now</button>
+        </div>
+        <div class="service-card"
+            onclick="showOrderForm('https://uicookies.com/wp-content/uploads/2020/08/Essentials-1024x807.jpg','Dynamic Website','Ideal for blogs, news sites, or businesses with regularly updated content..','$1,500')">
+            <img src="https://uicookies.com/wp-content/uploads/2020/08/Essentials-1024x807.jpg" alt="Service Image"
+                width="200">
+            <h2>Dynamic Website</h2>
+            <p>Ideal for blogs, news sites, or businesses with regularly updated content..</p>
+            <p>Price: $1,500</p>
+            <button>Order Now</button>
+        </div>
+        <div class="service-card"
+            onclick="showOrderForm('https://tse1.mm.bing.net/th?id=OIP.BrC8MKMDFAs-WHm6C2nDSQHaD5&pid=Api&P=0&h=220','Website Using React','Perfect for high-traffic websites or complex user interfaces.','$3,000')">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.BrC8MKMDFAs-WHm6C2nDSQHaD5&pid=Api&P=0&h=220"
+                alt="Service Image" width="200">
+            <h2>Website Using React</h2>
+            <p>Perfect for high-traffic websites or complex user interfaces..</p>
+            <p>Price: $3,000</p>
+            <button>Order Now</button>
+        </div>
+
+        <div class="service-card"
+            onclick="showOrderForm('https://i0.wp.com/www.bootstrapdash.com/wp-content/uploads/2020/06/justdo-react-admin-templates-.png?resize=2800%2C1800&ssl=1','eCommerce Website','We build user-friendly platforms that convert visitors into loyal customers.','$2,500')">
+            <img src="https://i0.wp.com/www.bootstrapdash.com/wp-content/uploads/2020/06/justdo-react-admin-templates-.png?resize=2800%2C1800&ssl=1"
+                alt="Service Image" width="200">
+            <h2>eCommerce Website</h2>
+            <p>We build user-friendly platforms that convert visitors into loyal customers..</p>
+            <p>Price: $2,500</p>
+            <button>Order Now</button>
+        </div>
+
+        <div class="service-card"
+            onclick="showOrderForm('https://tse3.mm.bing.net/th?id=OIP.vGsOueoOJtzvVrEWOZT0PQHaFj&pid=Api&P=0&h=220','Food Ordering','Let your culinary creations take center stage with a mouthwatering online ordering platform.','$3000')">
+            <img src="https://tse3.mm.bing.net/th?id=OIP.vGsOueoOJtzvVrEWOZT0PQHaFj&pid=Api&P=0&h=220"
+                alt="Service Image" width="200">
+            <h2>Food Ordering</h2>
+            <p>Let your culinary creations take center stage with a mouthwatering online ordering platform..</p>
+            <p>Price: $3000</p>
+            <button>Order Now</button>
+        </div>
+
+        <div class="service-card"
+            onclick="showOrderForm('https://colorlib.com/wp/wp-content/uploads/sites/2/heysilkyskin-dropshipping-website-example-1024x829.jpg','Dropshipping Website','We set you up with a dropshipping platform and handle the logistics.','$3500')">
+            <img src="https://colorlib.com/wp/wp-content/uploads/sites/2/heysilkyskin-dropshipping-website-example-1024x829.jpg"
+                alt="Service Image" width="200">
+            <h2>Dropshipping Website</h2>
+            <p>We set you up with a dropshipping platform and handle the logistics..</p>
+            <p>Price: $3500</p>
+            <button onclick=>Order Now</button>
+        </div>
+
+        <div class="service-card"
+            onclick="showOrderForm('https://i.pinimg.com/originals/11/5f/ef/115fefbb4a3c8071bb86a950b382f574.jpg','Grocery Website','Deliver fresh convenience to your customers with a user-friendly online grocery store','$1000')">
+            <img src="https://i.pinimg.com/originals/11/5f/ef/115fefbb4a3c8071bb86a950b382f574.jpg" alt="Service Image"
+                width="200">
+            <h2>Grocery Website</h2>
+            <p>Deliver fresh convenience to your customers with a user-friendly online grocery store.</p>
+            <p>Price: $1000</p>
+            <button>Order Now</button>
+        </div>
+
+        <div class="service-card"
+            onclick="showOrderForm('https://www.zauca.in/wp-content/uploads/small-business-web-desig.png','Custom Business Website','Real Estate Website Educational Website Healthcare Website','$2450')">
+            <img src="https://www.zauca.in/wp-content/uploads/small-business-web-desig.png" alt="Service Image"
+                width="200">
+            <h2>Custom Business Website</h2>
+            <p>Real Estate Website
+                Educational Website
+                Healthcare Website.</p>
+            <p>Price: $2450</p>
+            <button>Order Now</button>
+
+        </div>
+    </div>
+
+    <!-- Order Form Section -->
+    <div class="order-form" id="orderForm">
+        <h1>Order Form</h1>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required style="margin: 10px;"><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required style="margin: 10px;"><br>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            placeholder="Format: 123-456-7890" required style="margin: 10px;"><br>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" required style="margin: 10px;"><br>
+
+        <button onclick="submitOrder()" >Place Order</button>
+    </div>
+
+    <!-- Order Details Section -->
+    <div class="order-details" id="orderDetails">
+        <h1>Order Confirmation</h1>
+        <img src="" alt="Service Image" id="orderImage" width="200">
+        <h2 id="orderServiceName"></h2>
+        <p id="orderDescription"></p>
+        <p id="orderPrice"></p>
+        <button onclick="goBack()">Go Back</button>
+    </div>
+
+    <script>
+        function showOrderForm(image, serviceName, description, price) {
+            // Hide service container
+            document.querySelector('.service-container').style.display = 'none';
+
+            // Show order form
+            document.getElementById('orderForm').style.display = 'block';
+            // Set values based on the selected service
+            document.getElementById('orderImage').src = image;
+            document.getElementById('orderServiceName').innerText = serviceName;
+            document.getElementById('orderDescription').innerText = description;
+            document.getElementById('orderPrice').innerText = 'Price: ' + price;
+        }
+
+        function submitOrder() {
+            // Hide order form
+            document.getElementById('orderForm').style.display = 'none';
+
+            // Show order details
+            document.getElementById('orderDetails').style.display = 'block';
+        }
+
+        function goBack() {
+            // Show service container
+            document.querySelector('.service-container').style.display = 'grid';
+
+            // Hide order details
+            document.getElementById('orderDetails').style.display = 'none';
+        }
+    </script>
+
+</body>
+
+</html>
